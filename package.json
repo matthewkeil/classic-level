@@ -6,6 +6,7 @@
   "main": "index.js",
   "types": "./index.d.ts",
   "scripts": {
+    "preinstall": "git submodule update --init --recursive",
     "install": "node-gyp-build",
     "test": "standard && (nyc -s tape test/*-test.js | faucet) && nyc report",
     "test-gc": "node --expose-gc test/gc.js",
